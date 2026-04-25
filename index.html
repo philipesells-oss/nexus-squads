@@ -57,6 +57,7 @@
     nav a:hover { color: var(--white); }
 
     .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-mobile-cta { display: none; }
 
     .btn-nav {
       background: linear-gradient(135deg, var(--purple), var(--cyan));
@@ -221,9 +222,70 @@
       gap: 4rem; align-items: center;
     }
 
+    /* ─── COMPARE TABLE WRAPPER ─── */
+    .compare-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 2.5rem;
+      border-radius: 12px;
+    }
+    .compare-table { margin-top: 0; }
+
+    /* ─── MOBILE ─── */
     @media(max-width: 768px) {
       .solution-inner { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-mobile-cta { display: flex !important; }
+
+      section { padding: 3rem 1.25rem; }
+      .hero { padding: 6rem 1.25rem 3rem; }
+
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .hero-cta .btn-primary,
+      .hero-cta .btn-secondary { text-align: center; width: 100%; }
+
+      .hero-stats { gap: 1.5rem; padding-top: 1.75rem; }
+      .stat strong { font-size: 1.6rem; }
+
+      .compare-table { min-width: 560px; }
+
+      .pricing-cards { flex-direction: column; align-items: center; }
+      .price-card { width: 100%; max-width: 420px; padding: 1.75rem; }
+
+      .guarantee { flex-direction: column; text-align: center; gap: 1rem; padding: 1.5rem; }
+
+      .solution-visual { padding: 1.25rem; }
+      .terminal { padding: 1rem; font-size: .78rem; }
+
+      .steps-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .step { padding: 1.5rem; }
+
+      .forwho-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .squads-grid { grid-template-columns: 1fr; }
+
+      .faq-q { padding: 1rem 1.25rem; font-size: .9rem; }
+      .faq-a { padding: 0 1.25rem; }
+      .faq-item.open .faq-a { padding: 0 1.25rem 1rem; }
+
+      .section-title { letter-spacing: -.5px; }
+
+      .final-cta h2 { letter-spacing: -1px; }
+    }
+
+    @media(max-width: 480px) {
+      .hero-stats { flex-wrap: wrap; justify-content: space-around; gap: 1.25rem; }
+      .stat { min-width: 80px; }
+      .stat strong { font-size: 1.4rem; }
+
+      .forwho-grid { grid-template-columns: 1fr; }
+
+      .price-card { padding: 1.5rem; }
+      .price-value { font-size: 2.5rem; }
+
+      .compare-table th, .compare-table td { padding: .75rem 1rem; font-size: .82rem; }
+
+      .guarantee-icon { font-size: 2.5rem; }
     }
 
     .solution-visual {
@@ -566,6 +628,7 @@
     <a href="#preco">Preço</a>
     <a href="https://pay.kiwify.com.br/45Il2ko" target="_blank" class="btn-nav">Quero Acessar</a>
   </div>
+  <a href="https://pay.kiwify.com.br/45Il2ko" target="_blank" class="btn-nav nav-mobile-cta">Comprar</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -993,6 +1056,7 @@
     <span class="section-label">Comparativo</span>
     <h2 class="section-title">O Que Você Ganha<br />vs. A Alternativa.</h2>
 
+    <div class="compare-table-wrapper">
     <table class="compare-table">
       <thead>
         <tr>
@@ -1039,6 +1103,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
